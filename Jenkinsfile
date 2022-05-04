@@ -3,12 +3,11 @@ pipeline {
   environment {
     Rancher_Jekens_key = credentials('rancher-jekens-key')
   }
-    
-    stage('Build') {
+    stages('Build') {
       steps {
         sh 'docker build -t registry.hiqs.de/java-web-app:latest .'
       }
-    }
+    
     stage('Login') {
       steps {
         sh 'echo $registry.hiqs.de | docker login --username=furqan.iqbal --password=Haiderali@313 registry.hiqs.de'
@@ -30,8 +29,4 @@ pipeline {
       }
     }
   }
-  post {
-    always {
-      sh 'docker logout'
-    }
-  }
+}
