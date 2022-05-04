@@ -1,25 +1,25 @@
 pipeline {
-  agent { label 'linux' }
+  agent any
   environment {
     Rancher_Jekens_key = credentials('rancher-jekens-key')
   }
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t registry.hiqs.de/java-web-app:latest .'
+        sh 'Docker build -t registry.hiqs.de/java-web-app:latest .'
       }
     }
     
     stage('Login') {
       steps {
-        sh 'echo $registry.hiqs.de | docker login --username=furqan.iqbal --password=Haiderali@313 registry.hiqs.de'
+        sh 'echo $registry.hiqs.de | Docker login --username=furqan.iqbal --password=Haiderali@313 registry.hiqs.de'
       }
     }
     stage('Push to Heroku registry') {
       steps {
         sh '''
-          docker tag registry.hiqs.de/java-web-app:latest registry.hiqs.de/$APP_NAME/web
-          docker push registry.hiqs.de/$APP_NAME/web
+          Docker tag registry.hiqs.de/java-web-app:latest registry.hiqs.de/$APP_NAME/web
+          Docker push registry.hiqs.de/$APP_NAME/web
         '''
       }
     }
