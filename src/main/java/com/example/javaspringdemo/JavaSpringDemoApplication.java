@@ -6,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class JavaSpringDemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(JavaSpringDemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(JavaSpringDemoApplication.class, args);
+        System.out.println("Java Spring boot project is running congrats");
+    }
 
 }
