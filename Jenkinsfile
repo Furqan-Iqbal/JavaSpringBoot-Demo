@@ -3,10 +3,12 @@ pipeline {
   environment {
     Rancher_Jekens_key = credentials('rancher-jekens-key')
   }
-    stages('Build') {
+  stages {
+    stage('Build') {
       steps {
         sh 'docker build -t registry.hiqs.de/java-web-app:latest .'
       }
+    }
     
     stage('Login') {
       steps {
