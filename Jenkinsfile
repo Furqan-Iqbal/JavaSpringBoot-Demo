@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  tools {
-    Docker 'Docker'
-  }
   environment {
     Rancher_Jekens_key = credentials('rancher-jekens-key')
   }
