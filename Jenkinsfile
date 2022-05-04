@@ -1,11 +1,15 @@
 pipeline {
-  agent {
-    label 'myDocker' 
-  }
+  agent any
   environment {
     Rancher_Jekens_key = credentials('rancher-jekens-key')
   }
   stages {
+    stage('Initialize')
+    {
+        def dockerHome = tool 'myDocker'
+        def mavenHome  = tool 'Maven'
+        env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
+    }
     stage('Build') {
       steps {
         sh 'Docker build -t registry.hiqs.de/java-web-app:latest .'
