@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent { label 'linux' }
   environment {
     Rancher_Jekens_key = credentials('rancher-jekens-key')
   }
