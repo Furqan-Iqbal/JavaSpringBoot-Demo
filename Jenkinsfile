@@ -18,7 +18,6 @@ pipeline {
     stage('Push to Heroku registry') {
       steps {
         sh '''
-          Docker tag 00313/java-web-app:latest
           Docker push 00313/java-web-app:latest
         '''
       }
