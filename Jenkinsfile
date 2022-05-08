@@ -6,13 +6,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'Docker build -t registry.hiqs.de/java-web-app:latest .'
+        sh 'Docker build -t 00313/java-web-app:latest .'
       }
     }
     
     stage('Login') {
       steps {
-        sh 'echo $registry.hiqs.de | Docker login --username=furqan.iqbal --password=Haiderali@3130377956 registry.hiqs.de'
+        sh 'echo Docker login --username=00313 --password=Haiderali@313'
       }
     }
     stage('Push to Heroku registry') {
