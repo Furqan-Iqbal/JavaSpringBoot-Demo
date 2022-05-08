@@ -18,15 +18,8 @@ pipeline {
     stage('Push to Heroku registry') {
       steps {
         sh '''
-          Docker tag 00313/java-web-app:latest 00313/$APP_NAME/web
-          Docker push 00313/$APP_NAME/web
-        '''
-      }
-    }
-    stage('Release the image') {
-      steps {
-        sh '''
-          heroku container:release web --app=$APP_NAME
+          Docker tag 00313/java-web-app:latest
+          Docker push 00313/java-web-app:latest
         '''
       }
     }
