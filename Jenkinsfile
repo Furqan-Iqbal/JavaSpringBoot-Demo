@@ -12,7 +12,7 @@ pipeline {
     
     stage('Login') {
       steps {
-        sh 'echo $registry.hiqs.de | Docker login --username=furqan.iqbal --password=Haiderali@313 registry.hiqs.de'
+        sh 'echo $registry.hiqs.de | Docker login --username=furqan.iqbal --password=Haiderali@3130377956 registry.hiqs.de'
       }
     }
     stage('Push to Heroku registry') {
