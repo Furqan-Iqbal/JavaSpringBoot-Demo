@@ -6,19 +6,19 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'Docker build -t registry.hiqs.de/java-web-app1:v1 .'
+        sh 'Docker build -t 00313/java-web-app2:latest .'
       }
     }
     
     stage('Login') {
       steps {
-        sh 'echo docker login registry.hiqs.de --username=furqan.iqbal --password=Haiderali@3130377956'
+        sh 'echo Docker login --username=00313 --password=Haiderali@313'
       }
     }
     stage('Push to Hiqs registry') {
       steps {
         sh '''
-          Docker push registry.hiqs.de/java-web-app1:v1
+         Docker push 00313/java-web-app2:latest
         '''
       }
     }
