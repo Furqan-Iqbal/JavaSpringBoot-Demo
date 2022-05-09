@@ -11,6 +11,7 @@ public class JavaSpringDemoApplication {
         System.out.println("Java Spring boot project is running congrats");
         System.out.println("Nochmal congrats");
         System.out.println("Shukur");
+        System.out.println("Shukurri");
     }
 
 }
