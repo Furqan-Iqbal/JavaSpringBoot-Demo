@@ -9,6 +9,7 @@ public class JavaSpringDemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(JavaSpringDemoApplication.class, args);
         System.out.println("Java Spring boot project is running congrats");
+        System.out.println("Nochmal congrats");
     }
 
 }
